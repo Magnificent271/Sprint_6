@@ -4,7 +4,7 @@ from locators.locators import Locators
 
 
 
-class Test_Logout_User(Locators):
+class TestLogoutUser(Locators):
     def test_logout_user(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 8, poll_frequency=1)

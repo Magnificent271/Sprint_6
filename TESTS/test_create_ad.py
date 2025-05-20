@@ -5,7 +5,7 @@ from config.data import PRODUCT_NAME
 
 
 
-class Test_Create_Ad_Not_Login_User(Locators):
+class TestCreateAdNotLoginUser(Locators):
     def test_create_ad_not_login_user(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 8, poll_frequency=1)
@@ -17,7 +17,7 @@ class Test_Create_Ad_Not_Login_User(Locators):
 
 
 
-class Test_Create_Ad_Login_User(Locators):
+class TestCreateAdLoginUser(Locators):
     def test_create_ad_login_user(self, driver):
         email = self.email
         password = self.password

@@ -3,8 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from locators.locators import Locators
 
 
-
-class Test_Login_User(Locators):
+class TestLoginUser():
     def test_login_user(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 8, poll_frequency=1)

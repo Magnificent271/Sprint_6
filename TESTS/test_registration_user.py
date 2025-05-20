@@ -6,7 +6,7 @@ from locators.locators import Locators
 
 
 # Тест регистрации пользователя
-class Test_User_Registration(Locators):
+class TestUserRegistration(Locators):
     def test_user_registration(self, driver):
         email = self.email
         password = self.password
@@ -20,13 +20,12 @@ class Test_User_Registration(Locators):
         self.wait.until(EC.element_to_be_clickable(self.CONFIRM_PASSWORD_INPUT)).send_keys(password)
         self.wait.until(EC.element_to_be_clickable(self.REGISTER_BUTTON)).click()
         self.wait.until(EC.visibility_of_all_elements_located(self.CARDS_IN_MAIN_PAGE))
-        # assert self.wait.until(EC.text_to_be_present_in_element(self.NAME_REGISTRED_USER, "User."))
         assert self.wait.until(EC.presence_of_element_located(self.NAME_REGISTRED_USER)).text == "User."
         assert self.wait.until(EC.visibility_of_element_located(self.ICON_USER_PROFILE)). is_displayed()
 
 
 
-class Test_Not_Registration(Locators):
+class TestNotRegistration(Locators):
 
     @pytest.mark.parametrize("email, password", [
         ("test@test@test.comm", "123123"),   # email не по маске
